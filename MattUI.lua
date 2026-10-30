@@ -1,9 +1,9 @@
 --[[
-    MattUI  -  black / deep-blue UI library with an elegant glitch title ("MattXaviera")
+    MattUI  -  black / deep-blue UI library with an elegant glitch title ("AnotherLife")
     Same API as the script already uses (drop-in for the old catui / Rayfield adapter):
 
         local UILib = loadstring(game:HttpGet("<URL OF THIS FILE>"))()
-        local win   = UILib:Window({ Title = "MattXaviera", Footer = "Violence District" })
+        local win   = UILib:Window({ Title = "AnotherLife", Footer = "Violence District" })
         win:InfoTab({ Name = "Info", DiscordLink = "https://discord.gg/xxxx", DiscordDesc = "..." })
         local tab = win:AddTab({ Name = "Exclusive", Icon = "sparkles" })
         local sec = tab:AddSection("Auto Parry")
@@ -184,7 +184,7 @@ function Lib:MakeNotify(o)
         AutomaticSize = Enum.AutomaticSize.Y }, card)
     pad(inner, 0, 8, 6, 8)
     make("UIListLayout", { Padding = UDim.new(0, 2) }, inner)
-    local t = label(inner, tostring(o.Title or "MattXaviera"), 13, C.text, FONT_B)
+    local t = label(inner, tostring(o.Title or "AnotherLife"), 13, C.text, FONT_B)
     t.Size = UDim2.new(1, 0, 0, 16)
     local c = label(inner, tostring(o.Content or ""), 12, C.sub)
     c.Size, c.AutomaticSize, c.TextWrapped = UDim2.new(1, 0, 0, 14), Enum.AutomaticSize.Y, true
@@ -687,7 +687,7 @@ end
 function Window:InfoTab(o)
     local tab = self:AddTab({ Name = o.Name or "Info" })
     local s = tab:AddSection(o.SectionTitle or "Information")
-    s:AddParagraph({ Title = "MattXaviera " .. tostring(o.Version or ""), Content = o.DiscordDesc or "" })
+    s:AddParagraph({ Title = "AnotherLife " .. tostring(o.Version or ""), Content = o.DiscordDesc or "" })
     if o.DiscordLink then
         s:AddButton({ Title = "Copy Discord Link", Callback = function()
             pcall(function() setclipboard(o.DiscordLink) end)
@@ -717,7 +717,7 @@ function Lib:Window(o)
 
     -- title bar
     local bar = make("Frame", { BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 44) }, main)
-    glitchText(bar, "MattXaviera", 20, 170, 44, Enum.TextXAlignment.Left).Position = UDim2.fromOffset(18, 0)
+    glitchText(bar, "AnotherLife", 20, 170, 44, Enum.TextXAlignment.Left).Position = UDim2.fromOffset(18, 0)
     local foot = label(bar, tostring(o.Footer or ""), 11, C.sub)
     foot.Position, foot.Size = UDim2.fromOffset(186, 4), UDim2.new(1, -300, 1, 0)
     make("Frame", { BackgroundColor3 = C.line, BorderSizePixel = 0, Size = UDim2.new(1, 0, 0, 1), Position = UDim2.new(0, 0, 1, 0) }, bar)
@@ -772,7 +772,7 @@ function Lib:Window(o)
     -- intro splash with glitch title, then reveal the window
     local splash = make("CanvasGroup", { BackgroundColor3 = C.bg2, Size = UDim2.new(1, 0, 1, 0), ZIndex = 100 }, gui)
     make("UIGradient", { Color = ColorSequence.new(Color3.fromRGB(7, 13, 30), C.bg2), Rotation = 90 }, splash)
-    local g = glitchText(splash, "MattXaviera", 46, 360, 70, Enum.TextXAlignment.Center)
+    local g = glitchText(splash, "AnotherLife", 46, 360, 70, Enum.TextXAlignment.Center)
     g.AnchorPoint, g.Position = Vector2.new(0.5, 0.5), UDim2.new(0.5, 0, 0.5, -8)
     local sub = label(splash, string.upper(tostring(o.Footer or "")), 12, C.sub, FONT, Enum.TextXAlignment.Center)
     sub.AnchorPoint, sub.Position, sub.Size = Vector2.new(0.5, 0.5), UDim2.new(0.5, 0, 0.5, 38), UDim2.fromOffset(360, 16)
